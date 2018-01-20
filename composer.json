@@ -13,13 +13,12 @@
   ],
   "require": {
     "php": ">=7.0",
-    "behat/transliterator": "^1.1"
+    "behat/transliterator": "^1.1",
+    "symfony/framework-standard-edition": "3.*"
   },
   "require-dev": {
     "phpunit/phpunit": "6.*",
-    "satooshi/php-coveralls": "dev-master",
-    "symfony/framework-standard-edition": "3.*",
-    "symfony/security-acl": "3.*"
+    "satooshi/php-coveralls": "dev-master"
   },
   "autoload": {
     "psr-4": {
