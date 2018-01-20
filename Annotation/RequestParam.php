@@ -1,13 +1,13 @@
 <?php
 
-namespace SN\RequestParaBundle\Annotation;
+namespace SN\RequestParamBundle\Annotation;
 
 /**
  * Class Request
  * @Annotation
- * @package SN\RequestParaBundle\Annotation
+ * @package SN\RequestParamBundle\Annotation
  */
-class RequestPara
+class RequestParam
 {
     private $requestClass;
 

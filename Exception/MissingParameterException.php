@@ -1,11 +1,11 @@
 <?php
 
-namespace SN\RequestParaBundle\Exception;
+namespace SN\RequestParamBundle\Exception;
 
 /**
  * Class NotImplementedException
  *
- * @package SN\SNRequestParaBundle\Exception
+ * @package SN\SNRequestParamBundle\Exception
  */
 class MissingParameterException extends \Exception
 {

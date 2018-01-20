@@ -1,8 +1,8 @@
 <?php
 
-namespace SN\RequestParaBundle\Exception;
+namespace SN\RequestParamBundle\Exception;
 
-use SN\RequestParaBundle\Helper\RequestParaHelper;
+use SN\RequestParamBundle\Helper\RequestParamHelper;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException as BaseException;
 
 /**
@@ -14,12 +14,12 @@ class BadRequestHttpException extends BaseException
 {
 
     /**
-     * @var RequestParaHelper
+     * @var RequestParamHelper
      */
     protected $requestHelper;
 
     /**
-     * @return RequestParaHelper
+     * @return RequestParamHelper
      */
     public function getRequestHelper()
     {
@@ -27,9 +27,9 @@ class BadRequestHttpException extends BaseException
     }
 
     /**
-     * @param RequestParaHelper $requestHelper
+     * @param RequestParamHelper $requestHelper
      */
-    public function setRequestHelper(RequestParaHelper $requestHelper)
+    public function setRequestHelper(RequestParamHelper $requestHelper)
     {
         $this->requestHelper = $requestHelper;
     }

@@ -1,11 +1,11 @@
 <?php
 
-namespace SN\RequestParaBundle;
+namespace SN\RequestParamBundle;
 
-use SN\RequestParaBundle\DependencyInjection\RequestParaExtension;
+use SN\RequestParamBundle\DependencyInjection\RequestParaExtension;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class SNRequestParaBundle extends Bundle
+class SNRequestParamBundle extends Bundle
 {
     public function getContainerExtension()
     {

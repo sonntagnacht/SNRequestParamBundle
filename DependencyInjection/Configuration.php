@@ -1,6 +1,6 @@
 <?php
 
-namespace SN\RequestParaBundle\DependencyInjection;
+namespace SN\RequestParamBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

@@ -1,10 +1,10 @@
 <?php
 
-namespace SN\RequestParaBundle\RequestParameter;
+namespace SN\RequestParamBundle\RequestParameter;
 
 
-use SN\RequestParaBundle\Helper\RequestParaHelper;
-use SN\RequestParaBundle\Helper\StringHelper;
+use SN\RequestParamBundle\Helper\RequestParamHelper;
+use SN\RequestParamBundle\Helper\StringHelper;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -12,7 +12,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 /**
  * Class AbstractRequestParameter
  *
- * @package SN\SNRequestParaBundle\Request
+ * @package SN\SNRequestParamBundle\Request
  */
 abstract class AbstractRequestParameter
 {
@@ -30,7 +30,7 @@ abstract class AbstractRequestParameter
     protected $_format;
 
     /**
-     * @var RequestParaHelper
+     * @var RequestParamHelper
      */
     protected $requestHelper;
 
@@ -697,17 +697,17 @@ abstract class AbstractRequestParameter
     }
 
     /**
-     * @return RequestParaHelper
+     * @return RequestParamHelper
      */
-    public function getRequestHelper(): RequestParaHelper
+    public function getRequestHelper(): RequestParamHelper
     {
         return $this->requestHelper;
     }
 
     /**
-     * @param RequestParaHelper $requestHelper
+     * @param RequestParamHelper $requestHelper
      */
-    public function setRequestHelper(RequestParaHelper $requestHelper)
+    public function setRequestHelper(RequestParamHelper $requestHelper)
     {
         $this->requestHelper = $requestHelper;
     }

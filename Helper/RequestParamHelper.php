@@ -1,11 +1,11 @@
 <?php
 
-namespace SN\RequestParaBundle\Helper;
+namespace SN\RequestParamBundle\Helper;
 
 
-use SN\RequestParaBundle\Exception\BadRequestHttpException;
-use SN\RequestParaBundle\RequestParameter\AbstractRequestParameter;
-use SN\RequestParaBundle\RequestParameter\CombinedRequestOptionsInterface;
+use SN\RequestParamBundle\Exception\BadRequestHttpException;
+use SN\RequestParamBundle\RequestParameter\AbstractRequestParameter;
+use SN\RequestParamBundle\RequestParameter\CombinedRequestOptionsInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\OptionsResolver\Exception\InvalidOptionsException;
@@ -15,9 +15,9 @@ use Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException;
 /**
  * Class RequestHelper
  *
- * @package SN\SNRequestParaBundle\Helper
+ * @package SN\SNRequestParamBundle\Helper
  */
-class RequestParaHelper
+class RequestParamHelper
 {
 
     /**
@@ -38,7 +38,7 @@ class RequestParaHelper
     /**
      * @param AbstractRequestParameter $param
      * @param $requestParameter
-     * @return static|RequestParaHelper
+     * @return static|RequestParamHelper
      */
     public static function create(AbstractRequestParameter $param, $requestParameter)
     {
@@ -92,7 +92,7 @@ class RequestParaHelper
                                  $files = false
     )
     {
-        $mergedParams = RequestParaHelper::mergeAllParams(
+        $mergedParams = RequestParamHelper::mergeAllParams(
             $request,
             $requestContent,
             $requestBody,
@@ -100,7 +100,7 @@ class RequestParaHelper
         );
 
         /**
-         * @var $helper RequestParaHelper
+         * @var $helper RequestParamHelper
          */
         $helper = self::create($param, $mergedParams);
 

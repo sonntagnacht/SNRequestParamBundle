@@ -1,13 +1,13 @@
 <?php
 
-namespace SN\RequestParaBundle\Helper;
+namespace SN\RequestParamBundle\Helper;
 
 use Behat\Transliterator\Transliterator;
 
 /**
  * Class StringHelper
  *
- * @package SN\SNRequestParaBundle\Helper
+ * @package SN\SNRequestParamBundle\Helper
  */
 class StringHelper extends Transliterator
 {

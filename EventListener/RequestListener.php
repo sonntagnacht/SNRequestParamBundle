@@ -1,17 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: thhan
- * Date: 16.01.2018
- * Time: 22:51
- */
 
-namespace SN\RequestParaBundle\EventListener;
+namespace SN\RequestParamBundle\EventListener;
 
 
 use Doctrine\Common\Annotations\AnnotationReader;
-use SN\RequestParaBundle\Annotation\RequestPara;
-use SN\RequestParaBundle\Helper\RequestParaHelper;
+use SN\RequestParamBundle\Annotation\RequestParam;
+use SN\RequestParamBundle\Helper\RequestParamHelper;
 use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
 
 class RequestListener
@@ -32,18 +26,18 @@ class RequestListener
         $reflectionObject = new \ReflectionClass($event->getController()[0]);
         $reflectionMethod = $reflectionObject->getMethod($event->getController()[1]);
         /**
-         * @var $annotation RequestPara
+         * @var $annotation RequestParam
          */
-        $annotation = $this->reader->getMethodAnnotation($reflectionMethod, RequestPara::class);
+        $annotation = $this->reader->getMethodAnnotation($reflectionMethod, RequestParam::class);
         if ($annotation !== null) {
             $requestClass = $annotation->getRequestClass();
-            $param = RequestParaHelper::parse(
+            $param = RequestParamHelper::parse(
                 $event->getRequest(),
                 new $requestClass,
                 $annotation->isRequestContent(),
                 $annotation->isRequestBody(),
                 $annotation->isFiles());
-            $event->getRequest()->attributes->add(array('para' => $param));
+            $event->getRequest()->attributes->add(array('param' => $param));
         }
 
     }

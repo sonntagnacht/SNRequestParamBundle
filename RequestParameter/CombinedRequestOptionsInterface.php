@@ -1,6 +1,6 @@
 <?php
 
-namespace SN\RequestParaBundle\RequestParameter;
+namespace SN\RequestParamBundle\RequestParameter;
 
 
 use Symfony\Component\OptionsResolver\Exception\InvalidOptionsException;
@@ -9,7 +9,7 @@ use Symfony\Component\OptionsResolver\Exception\MissingOptionsException;
 /**
  * Interface CombinedRequestOptionsInterface
  *
- * @package SN\RequestParaBundle\RequestParameter
+ * @package SN\RequestParamBundle\RequestParameter
  */
 interface CombinedRequestOptionsInterface
 {

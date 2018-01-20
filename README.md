@@ -1,10 +1,10 @@
-# SNRequestParaBundle
+# SNRequestParamBundle
 
-RequestParaBundle is an easier way to validate request data and use auto-complete request data in your IDE.
+RequestParamBundle is an easier way to validate request data and use auto-complete request data in your IDE.
 
 ## Installation
 
-Run `composer require sonntagnacht/requestpara-bundle` to use SNRequestParaBundle in your Symfony Project.
+Run `composer require sonntagnacht/requestparam-bundle` to use SNRequestParamBundle in your Symfony Project.
 
 ## Configuration
 
@@ -20,7 +20,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             // ...
-            new SN\RequestParaBundle\SNRequestParaBundle(),
+            new SN\RequestParamBundle\SNRequestParamBundle(),
             // ...
             
         return $bundles;
@@ -39,7 +39,7 @@ class AppKernel extends Kernel
 
 namespace AppBundle\RequestParameter;
     
-use SN\RequestParaBundle\RequestParameter\AbstractRequestParameter
+use SN\RequestParamBundle\RequestParameter\AbstractRequestParameter
 use Symfony\Component\OptionsResolver\OptionsResolver;
     
 class getUserDetails extends AbstractRequestParameter 
@@ -72,7 +72,7 @@ namespace AppBundle\Controller;
     
 use AppBundle\RequestParameter\getUserDetails;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use SN\RequestParaBundle\Annotation\RequestPara;
+use SN\RequestParamBundle\Annotation\RequestPara;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
