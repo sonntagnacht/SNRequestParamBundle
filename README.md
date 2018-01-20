@@ -72,7 +72,7 @@ namespace AppBundle\Controller;
     
 use AppBundle\RequestParameter\getUserDetails;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use SN\RequestParamBundle\Annotation\RequestPara;
+use SN\RequestParamBundle\Annotation\RequestParam;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
