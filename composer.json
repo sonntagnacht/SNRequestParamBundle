@@ -1,5 +1,5 @@
 {
-  "name": "sonntagnacht/requestpara-bundle",
+  "name": "sonntagnacht/requestparam-bundle",
   "description": "easier validation of request data",
   "type": "symfony-bundle",
   "authors": [
