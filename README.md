@@ -81,7 +81,7 @@ class UserController extends Controller
 {
     /**
     * @Route("/user/{id}/details")
-    * @RequestPara("AppBundle\RequestParameter\getUserDetails",
+    * @RequestParam("AppBundle\RequestParameter\getUserDetails",
     *  {
     *      requestContent=true,
     *      requestBody=true,
