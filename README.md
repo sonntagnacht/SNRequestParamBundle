@@ -70,7 +70,7 @@ class GetUserDetails extends AbstractRequestParameter
 
 namespace AppBundle\Controller;
     
-use AppBundle\RequestParameter\getUserDetails;
+use AppBundle\RequestParameter\GetUserDetails;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use SN\RequestParamBundle\Annotation\RequestParam;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -93,7 +93,7 @@ class UserController extends Controller
     public function getUserDetailsAction(Request $request)
     {
         /**
-        * @var $parameter getUserDetails;
+        * @var $parameter GetUserDetails;
         */
         $parameter = $request->get('param');
         
