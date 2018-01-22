@@ -33,16 +33,16 @@ class AppKernel extends Kernel
 
 ### Example ID
 
-`AppBundle\RequestParameter\getUserDetails.php`
+`AppBundle\RequestParameter\GetUserDetails.php`
 
 ```php
 
 namespace AppBundle\RequestParameter;
     
-use SN\RequestParamBundle\RequestParameter\AbstractRequestParameter
+use SN\RequestParamBundle\RequestParameter\AbstractRequestParameter;
 use Symfony\Component\OptionsResolver\OptionsResolver;
     
-class getUserDetails extends AbstractRequestParameter 
+class GetUserDetails extends AbstractRequestParameter 
 {
     
     /** 
@@ -81,7 +81,7 @@ class UserController extends Controller
 {
     /**
     * @Route("/user/{id}/details")
-    * @RequestParam("AppBundle\RequestParameter\getUserDetails",
+    * @RequestParam("AppBundle\RequestParameter\GetUserDetails",
     *  {
     *      requestContent=true,
     *      requestBody=true,
@@ -95,7 +95,7 @@ class UserController extends Controller
         /**
         * @var $parameter getUserDetails;
         */
-        $parameter = $request->get('para');
+        $parameter = $request->get('param');
         
         $id = $parameter->getId();
         
