@@ -1,9 +1,9 @@
 services:
   sn.request.listener:
-    class: SN\RequestBundle\EventListener\RequestListener
+    class: SN\RequestParamBundle\EventListener\RequestListener
     tags:
       - { name: kernel.event_listener, event: kernel.controller }
   sn.exception.listener:
-    class: SN\RequestBundle\EventListener\ExceptionListener
+    class: SN\RequestParamBundle\EventListener\ExceptionListener
     tags:
       - { name: kernel.event_listener, event: kernel.exception }

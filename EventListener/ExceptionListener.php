@@ -1,23 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sn-thomas
- * Date: 05.02.18
- * Time: 11:34
- */
 
-namespace SN\RequestBundle\EventListener;
+namespace SN\RequestParamBundle\EventListener;
 
 
-use SN\RequestBundle\Exception\BadRequestHttpException;
+use SN\RequestParamBundle\Exception\BadRequestHttpException;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
 
-/**
- * Class ExceptionListener
- *
- * @package SN\ToolboxBundle\Event
- */
 class ExceptionListener
 {
 
