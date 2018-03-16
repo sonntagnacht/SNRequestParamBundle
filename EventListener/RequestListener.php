@@ -23,6 +23,10 @@ class RequestListener
     public function onKernelController(FilterControllerEvent $event)
     {
 
+        if (!is_array($event->getController())) {
+            return;
+        }
+
         $reflectionObject = new \ReflectionClass($event->getController()[0]);
         $reflectionMethod = $reflectionObject->getMethod($event->getController()[1]);
         /**
