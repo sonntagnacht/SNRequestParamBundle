@@ -1,0 +1,32 @@
+language: php
+
+cache:
+  apt: true
+  ccache: true
+  timeout: 691200
+  directories:
+    - .temp
+    - $HOME/.ccache
+    - $HOME/.composer/cache
+
+php:
+  - 7.0
+  - 7.1
+  
+install:
+  - phpenv config-rm xdebug.ini
+  
+before_script:
+  - composer update --prefer-source
+
+script:
+  - mkdir -p build/logs
+  - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+
+after_script:
+ - php vendor/bin/coveralls -v
+
+notifications:
+    slack:
+        rooms:
+            - sonntagnacht:CZvguyxyM0tlb6Smj7amHjTw#internetz
