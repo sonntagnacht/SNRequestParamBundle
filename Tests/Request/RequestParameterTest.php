@@ -34,7 +34,11 @@ class RequestParameterTest extends BaseTestCase
         $this->assertEquals(-1, $sampleRequest->getOptionalNegativeInt());
 
         // force override options
-        $sampleRequest->setOptionalInt(2);
+        $sampleRequest->resolve(array(
+            'optionalInt'         => 2,
+            'optionalIntDefault3' => 10,
+            'optionalNegativeInt' => -1
+        ));
         $optionsUpdated = $sampleRequest->getOptions(true);
         $this->assertNotEquals(
             array(
