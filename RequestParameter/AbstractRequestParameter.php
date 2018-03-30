@@ -88,7 +88,7 @@ abstract class AbstractRequestParameter
     {
         $resolver->setDefined(array('_format'));
         $resolver->setAllowedTypes('_format', array('string'));
-        $resolver->setDefault('_format', array('json'));
+        $resolver->setDefault('_format', 'json');
         $resolver->setAllowedValues('_format', array('json'));
     }
 
@@ -281,7 +281,10 @@ abstract class AbstractRequestParameter
             $resolver->setDefined($name);
         }
 
-        $resolver->setAllowedTypes($name, array('string', 'int'));
+        $resolver->setAllowedTypes($name,
+            $allowNull || !$required ? array('string', 'int', 'null') : array('string', 'int')
+        );
+
 
         $resolver->setAllowedValues($name,
             function ($value) use ($allowNull, $name) {

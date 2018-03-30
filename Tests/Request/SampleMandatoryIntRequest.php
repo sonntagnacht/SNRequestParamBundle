@@ -22,7 +22,7 @@ class SampleMandatoryIntRequest extends AbstractRequestParameter
     /**
      * @var int
      */
-    protected $mandatoryIntDefault3 = 3;
+    protected $mandatoryIntDefault3;
 
     /**
      * @param OptionsResolver $resolver
