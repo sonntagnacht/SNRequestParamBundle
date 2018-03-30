@@ -46,8 +46,8 @@ abstract class AbstractRequestParameter
             }
         } elseif ($options instanceof Request) {
 
-            $routeParams = $options->attributes->get('_route_params');
-            $queryParams = $options->query->all();
+            $routeParams   = $options->attributes->get('_route_params');
+            $queryParams   = $options->query->all();
             $requestParams = $options->request->all();
 
             $this->resolve(array_merge($routeParams, $queryParams, $requestParams));
@@ -214,7 +214,7 @@ abstract class AbstractRequestParameter
     public static function getAllowedIdListValues($value, $uniqueValues = true, $allowEmpty = false)
     {
         $unique = array();
-        $value = self::stringToArray($value);
+        $value  = self::stringToArray($value);
         if (count($value) == 0 && $allowEmpty == false) {
             return false;
         }
@@ -312,13 +312,13 @@ abstract class AbstractRequestParameter
     /**
      * @param OptionsResolver $resolver
      * @param String $name
-     * @param String $default
      * @param bool $required
+     * @param bool|null $default
      */
     public static function addBooleanParam(OptionsResolver $resolver,
                                            String $name,
-                                           bool $default = null,
-                                           bool $required = false)
+                                           bool $required = false,
+                                           bool $default = null)
     {
         if ($required) {
             $resolver->setRequired($name);
@@ -343,8 +343,8 @@ abstract class AbstractRequestParameter
      */
     public static function addStringParam(OptionsResolver $resolver,
                                           String $name,
-                                          String $default = null,
-                                          bool $required = false)
+                                          bool $required = false,
+                                          String $default = null)
     {
         if ($required) {
             $resolver->setRequired($name);
@@ -416,11 +416,11 @@ abstract class AbstractRequestParameter
             $name,
             function (Options $options, $value) {
                 if (false === is_array($value)) {
-                    return (String)$value;
+                    return (String) $value;
                 }
 
                 foreach ($value as $key => $val) {
-                    $value[$key] = (String)$val;
+                    $value[$key] = (String) $val;
                 }
 
                 return $value;
@@ -431,17 +431,17 @@ abstract class AbstractRequestParameter
     /**
      * @param OptionsResolver $resolver
      * @param String $name
-     * @param String|null $default
      * @param bool $required
      * @param String $format
+     * @param String|null $default
      */
     public static function addDateParam(OptionsResolver $resolver,
                                         String $name,
-                                        String $default = null,
                                         bool $required = false,
-                                        String $format = \DateTime::ISO8601)
+                                        String $format = \DateTime::ISO8601,
+                                        String $default = null)
     {
-        self::addStringParam($resolver, $name, $default, $required);
+        self::addStringParam($resolver, $name, $required, $default);
 
         $resolver->setAllowedValues($name,
             function ($value) use ($default, $format) {
@@ -670,7 +670,7 @@ abstract class AbstractRequestParameter
      */
     public static function isTimestamp($timestamp)
     {
-        return ctype_digit($timestamp) && strtotime(date('Y-m-d H:i:s', $timestamp)) === (int)$timestamp;
+        return ctype_digit($timestamp) && strtotime(date('Y-m-d H:i:s', $timestamp)) === (int) $timestamp;
     }
 
     /**
