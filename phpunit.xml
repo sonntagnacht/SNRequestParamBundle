@@ -11,6 +11,9 @@
          syntaxCheck="false"
          bootstrap="Tests/bootstrap.php"
 >
+    <logging>
+        <log type="coverage-php" target="build/cov/coverage.cov"/>
+    </logging>
     <testsuites>
         <testsuite name="MyOwnBundle Test Suite">
             <directory>./Tests/</directory>
