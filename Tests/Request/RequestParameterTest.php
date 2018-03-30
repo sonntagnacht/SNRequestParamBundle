@@ -130,20 +130,39 @@ class RequestParameterTest extends BaseTestCase
         $sampleRequest->resolve(array());
 
         $sampleRequest = new SamplePaginatedRequest(array(
-            'page' => 1,
+            'page'  => 1,
             'limit' => 100
         ));
         $this->assertEquals(1, $sampleRequest->getPage());
         $this->assertEquals(100, $sampleRequest->getLimit());
 
         $sampleRequest = new SamplePaginatedRequest(array(
-            'page' => 1,
+            'page'  => 1,
             'limit' => 500
         ));
         $this->assertEquals(1, $sampleRequest->getPage());
         $this->assertNotEquals(500, $sampleRequest->getLimit());
         // default limit is set to 25
         $this->assertEquals(25, $sampleRequest->getLimit());
+    }
+
+    public function testStringParams()
+    {
+        $sampleRequest = new SampleStringRequest();
+        $sampleRequest->resolve(array(
+            'optionalString'  => null,
+            'mandatoryString' => "abc"
+        ));
+
+        $this->assertEquals(
+            array(
+                'optionalString'  => null,
+                'mandatoryString' => "abc",
+                'defaultString'   => "abc"
+            ),
+            $sampleRequest->getOptions()
+        );
+
     }
 
 }
