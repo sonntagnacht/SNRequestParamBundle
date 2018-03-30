@@ -3,7 +3,7 @@
 namespace SN\RequestParamBundle\Tests\Request;
 
 use SN\RequestParamBundle\RequestParameter\AbstractRequestParameter;
-use SN\ToolboxBundle\Request\PaginatedGETRequestTrait;
+use SN\RequestParamBundle\RequestParameter\PaginatedGETRequestTrait;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class SamplePaginatedRequest extends AbstractRequestParameter
