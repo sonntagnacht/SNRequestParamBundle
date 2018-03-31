@@ -18,15 +18,6 @@
     </testsuites>
 
     <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">./</directory>
-        </whitelist>
-        <blacklist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">./Tests</directory>
-        </blacklist>
-    </filter>
-
-    <filter>
         <whitelist>
             <directory>./</directory>
             <exclude>
