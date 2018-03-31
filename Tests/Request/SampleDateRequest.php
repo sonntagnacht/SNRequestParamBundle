@@ -10,10 +10,9 @@ class SampleDateRequest extends AbstractRequestParameter
 {
 
     /**
-     * @var int
+     * @var \DateTime
      */
     protected $date;
-
 
 
     /**
@@ -24,5 +23,12 @@ class SampleDateRequest extends AbstractRequestParameter
         self::addDateParam($resolver, 'date', true);
     }
 
+    /**
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
 
 }
