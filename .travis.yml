@@ -18,10 +18,11 @@ install:
   
 before_script:
   - composer update --prefer-source
+  - cp phpunit.xml.dist phpunit.xml
 
 script:
   - mkdir -p build/logs
-  - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+  - ./vendor/bin/phpunit
 
 after_success:
   - travis_retry php vendor/bin/php-coveralls -v
