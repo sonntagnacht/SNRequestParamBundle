@@ -207,4 +207,21 @@ class RequestParameterTest extends BaseTestCase
         );
     }
 
+    public function testDateParam()
+    {
+        $date = new \DateTime();
+
+        $sampleRequest = new SampleDateRequest();
+        $sampleRequest->resolve(array(
+            'date' => $date
+        ));
+
+        $this->assertEquals(
+            array(
+                'date' => $date
+            ),
+            $sampleRequest->getOptions()
+        );
+    }
+
 }
