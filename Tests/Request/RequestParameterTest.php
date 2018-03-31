@@ -213,7 +213,7 @@ class RequestParameterTest extends BaseTestCase
 
         $sampleRequest = new SampleDateRequest();
         $sampleRequest->resolve(array(
-            'date' => $date
+            'date' => $date->format(\DateTime::ISO8601)
         ));
 
         $this->assertEquals(
