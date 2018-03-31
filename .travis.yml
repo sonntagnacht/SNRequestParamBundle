@@ -1,5 +1,11 @@
 language: php
 
+matrix:
+  include:
+    - php: 7.0
+    - php: 7.1
+    - php: hhvm
+
 cache:
   apt: true
   ccache: true
@@ -8,10 +14,6 @@ cache:
     - .temp
     - $HOME/.ccache
     - $HOME/.composer/cache
-
-php:
-  - 7.0
-  - 7.1
   
 install:
   - mv ${HOME}/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini ${HOME}/xdebug.ini || return 0
