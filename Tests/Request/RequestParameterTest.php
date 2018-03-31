@@ -169,4 +169,21 @@ class RequestParameterTest extends BaseTestCase
 
     }
 
+    public function testStringList()
+    {
+        $sampleRequest = new SampleStringListRequest();
+        $sampleRequest->resolve(array(
+            'optionalStringList'  => ["x", "y", "z"],
+            'mandatoryStringList' => ["a", "b", "c"]
+        ));
+
+        $this->assertEquals(
+            array(
+                'optionalStringList'  => ["x", "y", "z"],
+                'mandatoryStringList' => ["a", "b", "c"]
+            ),
+            $sampleRequest->getOptions()
+        );
+    }
+
 }
