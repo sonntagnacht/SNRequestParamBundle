@@ -14,7 +14,7 @@ php:
   - 7.1
   
 install:
-  - phpenv config-rm xdebug.ini
+  - mv ${HOME}/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini ${HOME}/xdebug.ini || return 0
   
 before_script:
   - composer update --prefer-source
