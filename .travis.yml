@@ -1,10 +1,8 @@
 language: php
 
-matrix:
-  include:
-    - php: 7.0
-    - php: 7.1
-    - php: hhvm
+php:
+  - 7.0
+  - 7.1
 
 cache:
   apt: true
@@ -14,9 +12,6 @@ cache:
     - .temp
     - $HOME/.ccache
     - $HOME/.composer/cache
-  
-install:
-  - mv ${HOME}/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini ${HOME}/xdebug.ini || return 0
   
 before_script:
   - composer update --prefer-source
