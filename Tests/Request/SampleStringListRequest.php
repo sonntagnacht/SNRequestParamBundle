@@ -9,40 +9,49 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class SampleStringListRequest extends AbstractRequestParameter
 {
     /**
-     * @var string
+     * @var array
      */
-    protected $mandatoryString;
+    protected $mandatoryStringList;
 
     /**
-     * @var string
+     * @var array
      */
-    protected $optionalString;
+    protected $optionalStringList;
 
     /**
-     * @var string
+     * @var array
      */
-    protected $defaultString;
+    protected $notStringList;
 
     protected function setDefaultOptions(OptionsResolver $resolver)
     {
         self::addStringListParameter($resolver, 'optionalStringList');
         self::addStringListParameter($resolver, 'mandatoryStringList', true);
+        self::addStringListParameter($resolver, 'notStringList');
     }
 
     /**
-     * @return string
+     * @return array
      */
-    public function getMandatoryString()
+    public function getMandatoryStringList()
     {
-        return $this->mandatoryString;
+        return $this->mandatoryStringList;
     }
 
     /**
-     * @return string
+     * @return array
      */
-    public function getOptionalString()
+    public function getOptionalStringList()
     {
-        return $this->optionalString;
+        return $this->optionalStringList;
+    }
+
+    /**
+     * @return array
+     */
+    public function getNotStringList()
+    {
+        return $this->notStringList;
     }
 
 }

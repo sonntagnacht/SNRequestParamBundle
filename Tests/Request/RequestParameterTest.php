@@ -174,13 +174,34 @@ class RequestParameterTest extends BaseTestCase
         $sampleRequest = new SampleStringListRequest();
         $sampleRequest->resolve(array(
             'optionalStringList'  => ["x", "y", "z"],
-            'mandatoryStringList' => ["a", "b", "c"]
+            'mandatoryStringList' => ["a", "b", "c"],
+            'notStringList'       => "d",
         ));
 
         $this->assertEquals(
             array(
                 'optionalStringList'  => ["x", "y", "z"],
-                'mandatoryStringList' => ["a", "b", "c"]
+                'mandatoryStringList' => ["a", "b", "c"],
+                'notStringList'       => "d"
+            ),
+            $sampleRequest->getOptions()
+        );
+    }
+
+    public function testIdList()
+    {
+        $sampleRequest = new SampleIdListRequest();
+        $sampleRequest->resolve(array(
+            'optionalIdList'  => [1, 2, 3],
+            'mandatoryIdList' => [9, 8, 7]
+
+        ));
+
+        $this->assertEquals(
+            array(
+                'optionalIdList'  => [1, 2, 3],
+                'mandatoryIdList' => [9, 8, 7]
+
             ),
             $sampleRequest->getOptions()
         );
