@@ -207,9 +207,13 @@ class RequestParameterTest extends BaseTestCase
         );
     }
 
-    public function testGetOptionsArray(){
+    public function testFormat()
+    {
         $sampleRequest = new SampleAPIDocRequest();
-        $this->assertEquals(null, $sampleRequest->getOptionsArray());
+        $this->assertEquals("json", $sampleRequest->_getFormat());
+
+        $sampleRequest->_setFormat("text");
+        $this->assertEquals("text", $sampleRequest->_getFormat());
     }
 
 //    public function testDateParam()
@@ -228,7 +232,6 @@ class RequestParameterTest extends BaseTestCase
 //            $sampleRequest->getOptions()
 //        );
 //    }
-
 
 
 }
