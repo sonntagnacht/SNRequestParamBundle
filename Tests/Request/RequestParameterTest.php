@@ -210,7 +210,6 @@ class RequestParameterTest extends BaseTestCase
     public function testFormat()
     {
         $sampleRequest = new SampleAPIDocRequest();
-        $this->assertEquals("json", $sampleRequest->_getFormat());
 
         $sampleRequest->_setFormat("text");
         $this->assertEquals("text", $sampleRequest->_getFormat());
