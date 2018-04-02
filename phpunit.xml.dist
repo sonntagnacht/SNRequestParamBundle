@@ -12,7 +12,7 @@
          bootstrap="Tests/bootstrap.php"
 >
   <php>
-    <env name="KERNEL_CLASS" value="App\Kernel"/>
+    <env name="KERNEL_CLASS" value="AppKernel"/>
   </php>
   <testsuites>
     <testsuite name="RequstParamBundle Test Suite">
