@@ -11,26 +11,29 @@
          syntaxCheck="false"
          bootstrap="Tests/bootstrap.php"
 >
-    <testsuites>
-        <testsuite name="MyOwnBundle Test Suite">
-            <directory>./Tests/</directory>
-        </testsuite>
-    </testsuites>
+  <php>
+    <env name="KERNEL_CLASS" value="App\Kernel"/>
+  </php>
+  <testsuites>
+    <testsuite name="RequstParamBundle Test Suite">
+      <directory>./Tests/</directory>
+    </testsuite>
+  </testsuites>
 
-    <logging>
-      <log type="coverage-clover" target="build/logs/clover.xml"/>
-      <log type="junit" target="build/logs/junit.xml" logIncompleteSkipped="false"/>
-    </logging>
+  <logging>
+    <log type="coverage-clover" target="build/logs/clover.xml"/>
+    <log type="junit" target="build/logs/junit.xml" logIncompleteSkipped="false"/>
+  </logging>
 
-    <filter>
-        <whitelist>
-            <directory>./</directory>
-            <exclude>
-                <directory>./Resources</directory>
-                <directory>./Tests</directory>
-                <directory>./vendor</directory>
-                <directory>./docs</directory>
-            </exclude>
-        </whitelist>
-    </filter>
+  <filter>
+    <whitelist>
+      <directory>./</directory>
+      <exclude>
+        <directory>./Resources</directory>
+        <directory>./Tests</directory>
+        <directory>./vendor</directory>
+        <directory>./docs</directory>
+      </exclude>
+    </whitelist>
+  </filter>
 </phpunit>
