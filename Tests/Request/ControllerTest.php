@@ -7,12 +7,12 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class ControllerTest extends WebTestCase
 {
-    public function testId()
-    {
-        $client = static::createClient();
-
-        $client->request("GET",'/test/test');
-
-        $this->assertEquals(400, $client->getResponse()->getStatusCode());
-    }
+//    public function testId()
+//    {
+//        $client = static::createClient();
+//
+//        $client->request("GET",'/test/test');
+//
+//        $this->assertEquals(400, $client->getResponse()->getStatusCode());
+//    }
 }
