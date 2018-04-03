@@ -215,22 +215,22 @@ class RequestParameterTest extends BaseTestCase
         $this->assertEquals("text", $sampleRequest->_getFormat());
     }
 
-//    public function testDateParam()
-//    {
-//        $date = new \DateTime();
-//
-//        $sampleRequest = new SampleDateRequest();
-//        $sampleRequest->resolve(array(
-//            'date' => $date->format(\DateTime::ISO8601)
-//        ));
-//
-//        $this->assertEquals(
-//            array(
-//                'date' => $date
-//            ),
-//            $sampleRequest->getOptions()
-//        );
-//    }
+    public function testDateParam()
+    {
+        $date = new \DateTime();
+
+        $sampleRequest = new SampleDateRequest();
+        $sampleRequest->resolve(array(
+            'date' => $date->format(\DateTime::ISO8601)
+        ));
+
+        $this->assertEquals(
+            array(
+                'date' => $date
+            ),
+            $sampleRequest->getOptions()
+        );
+    }
 
 
 }
