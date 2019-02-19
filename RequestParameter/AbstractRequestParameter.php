@@ -449,7 +449,7 @@ abstract class AbstractRequestParameter
         $resolver->setAllowedValues($name,
             function ($value) use ($default, $format) {
                 if (is_null($default)) {
-                    return is_null($value) ? true : self::validateDateTimeString($value, $format);
+                    return is_null($value) || empty($value) ? true : self::validateDateTimeString($value, $format);
                 }
 
                 return self::validateDateTimeString($value, $format);
@@ -458,7 +458,7 @@ abstract class AbstractRequestParameter
 
         $resolver->setNormalizer($name,
             function (Options $options, $value) use ($format) {
-                if (is_null($value)) {
+                if (is_null($value) || empty($value)) {
                     return null;
                 }
 
@@ -466,6 +466,7 @@ abstract class AbstractRequestParameter
             }
         );
     }
+
 
     /**
      * normalizes a boolean value with multiple input possibilities
