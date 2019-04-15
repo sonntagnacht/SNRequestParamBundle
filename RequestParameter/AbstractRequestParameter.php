@@ -314,6 +314,58 @@ abstract class AbstractRequestParameter
 
     /**
      * @param OptionsResolver $resolver
+     * @param string $name
+     * @param bool $required (true)
+     * @param bool $abs (true)
+     * @param float $default (null)
+     * @param bool $allowNull (false)
+     */
+    public static function addFloatParam(OptionsResolver $resolver,
+                                         String $name,
+                                         bool $required = false,
+                                         bool $abs = true,
+                                         float $default = null,
+                                         bool $allowNull = false)
+    {
+        if ($required) {
+            $resolver->setRequired($name);
+        } else {
+            $resolver->setDefined($name);
+        }
+
+        $resolver->setAllowedTypes($name,
+            $allowNull || !$required ? array('string', 'int', 'float', 'null') : array('string', 'int', 'float')
+        );
+
+
+        $resolver->setAllowedValues($name,
+            function ($value) use ($allowNull, $name) {
+                if ($allowNull) {
+                    // also allow empty strings
+                    return is_numeric($value) || is_null($value) || strlen($value) === 0;
+                }
+
+                return is_numeric($value);
+            }
+        );
+
+        $resolver->setNormalizer($name,
+            function (Options $options, $value) use ($abs, $allowNull, $name) {
+                if ($allowNull) {
+                    return $value !== null ? $abs ? abs(floatval($value)) : floatval($value) : null;
+                } else {
+                    return $abs ? abs(floatval($value)) : floatval($value);
+                }
+            }
+        );
+
+        if (is_numeric($default)) {
+            $resolver->setDefault($name, $default);
+        }
+    }
+
+    /**
+     * @param OptionsResolver $resolver
      * @param String $name
      * @param bool $required
      * @param bool|null $default
